@@ -1,0 +1,32 @@
+{
+  "name": "serverless-prs-github",
+  "version": "1.0.0",
+  "description": "Serverless PRs for GitHub",
+  "main": "handler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danwdart/serverless-prs-github.git"
+  },
+  "keywords": [
+    "serverless",
+    "prs",
+    "pr",
+    "pull",
+    "request",
+    "github"
+  ],
+  "author": "Dan Dart <npm@dandart.co.uk>",
+  "license": "AGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/danwdart/serverless-prs-github/issues"
+  },
+  "homepage": "https://github.com/danwdart/serverless-prs-github#readme",
+  "dependencies": {
+    "@octokit/rest": "^15.9.4",
+    "fs-extra": "^7.0.0",
+    "simple-git": "^1.96.0"
+  }
+}
