@@ -1,8 +1,8 @@
 'use strict';
 
 const {
-    GIT_REPOSITORY,
-    GIT_REPOSITORY_DIR,
+    GITHUB_REPO_USERNAME,
+    GIT_REPO_NAME,
     GITHUB_ACCESS_TOKEN,
     BRANCH_PREFIX,
     BASE_BRANCH,
@@ -12,14 +12,15 @@ const {
   } = process.env,
 
   GIT_REMOTE = `origin`,
+  GIT_FULL_URL = `https://${GITHUB_ACCESS_TOKEN}@github.com/${GITHUB_REPO_USERNAME}/${GIT_REPO_NAME}.git`,
   RANDOM_NAME = (Math.random() * 1e16).toString(36),
   BRANCH_NAME = `${BRANCH_PREFIX}_${RANDOM_NAME}`,
   FILE_NAME = `${RANDOM_NAME}${FILE_SUFFIX}`,
-  FILEPATH_NAME = `${GIT_REPOSITORY_DIR}/${FILE_NAME}`,
+  FILEPATH_NAME = `${GIT_REPO_NAME}/${FILE_NAME}`,
   octokit = require('@octokit/rest')(),
   fse = require('fs-extra'),
-  simpleGit = require('simple-git')(__dirname+'/' + GIT_REPOSITORY_DIR),
-  clone = () => simpleGit.clone(GIT_REPOSITORY, GIT_REPOSITORY_DIR),
+  simpleGit = require('simple-git')(__dirname+'/' + GIT_REPO_NAME),
+  clone = () => simpleGit.clone(GIT_FULL_URL, GIT_REPOSITORY_DIR),
   branch = () => simpleGit.checkoutBranch(BRANCH_NAME, BASE_BRANCH),
   createFile = comment => fse.writeFile(FILEPATH_NAME, comment),
   add = () => simpleGit.add([FILE_NAME]),
@@ -44,7 +45,7 @@ const {
     await commit(commitMessage);
     await push();
     await pr(commitMessage);
-    return {status: `OK`}
+    return {status: `OK`};
   },
 
 octokit.authenticate({
