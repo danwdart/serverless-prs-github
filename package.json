@@ -26,7 +26,8 @@
   "homepage": "https://github.com/danwdart/serverless-prs-github#readme",
   "dependencies": {
     "@octokit/rest": "^19.0.7",
+    "@snyk/protect": "^1.1108.0",
     "fs-extra": "^11.1.0",
-    "simple-git": "^3.16.0"
+    "simple-git": "^3.16.1"
   }
 }
