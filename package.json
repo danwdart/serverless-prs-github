@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/danwdart/serverless-prs-github.git"
+    "url": "git+https://github.com/emberdart/serverless-prs-github.git"
   },
   "keywords": [
     "serverless",
@@ -18,12 +18,12 @@
     "request",
     "github"
   ],
-  "author": "Dan Dart <npm@dandart.co.uk>",
+  "author": "Ember Dart <npm@emberdart.co.uk>",
   "license": "AGPL-3.0",
   "bugs": {
-    "url": "https://github.com/danwdart/serverless-prs-github/issues"
+    "url": "https://github.com/emberdart/serverless-prs-github/issues"
   },
-  "homepage": "https://github.com/danwdart/serverless-prs-github#readme",
+  "homepage": "https://github.com/emberdart/serverless-prs-github#readme",
   "dependencies": {
     "@octokit/rest": "^21.0.2",
     "@snyk/protect": "^1.1294.0",
