@@ -28,6 +28,6 @@
     "@octokit/rest": "^21.0.2",
     "@snyk/protect": "^1.1294.0",
     "fs-extra": "^11.2.0",
-    "simple-git": "^3.27.0"
+    "simple-git": "^3.32.3"
   }
 }
